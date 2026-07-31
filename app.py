@@ -10,6 +10,7 @@ from retriever import build_index, retrieve
 from llm import generate_answer
 from video_meta import get_video_meta
 import style
+import traceback
 
 
 # ----------------------------
@@ -167,8 +168,8 @@ if load_clicked:
     except ValueError:
         st.error("That doesn't look like a valid YouTube URL. Try pasting the full link.")
 
-    except Exception:
-        st.exception(Exception)
+    except Exception as e:
+        traceback.print_exc()
         raise
 
 
