@@ -167,8 +167,9 @@ if load_clicked:
     except ValueError:
         st.error("That doesn't look like a valid YouTube URL. Try pasting the full link.")
 
-    except Exception as e:
-        st.error(f"Couldn't load that video: {e}")
+    except Exception:
+        st.exception(Exception)
+        raise
 
 
 # ----------------------------
